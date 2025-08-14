@@ -1,7 +1,20 @@
+// Replace client/src/components/character-modal.tsx with this:
+
 import { useQuery } from "@tanstack/react-query";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
+
+interface Character {
+  id: string;
+  name: string;
+  title: string;
+  imageUrl: string;
+  background: string;
+  trustLevel: number;
+  appearanceCount: number;
+  keyDecisions?: string[];
+}
 
 interface CharacterModalProps {
   isOpen: boolean;
@@ -10,7 +23,7 @@ interface CharacterModalProps {
 }
 
 export default function CharacterModal({ isOpen, onClose, characterId }: CharacterModalProps) {
-  const { data: character, isLoading } = useQuery({
+  const { data: character, isLoading } = useQuery<Character>({
     queryKey: ["/api/characters", characterId],
     enabled: isOpen && !!characterId,
   });
@@ -64,8 +77,8 @@ export default function CharacterModal({ isOpen, onClose, characterId }: Charact
                   </div>
                   <Progress value={character.trustLevel} className="h-2 mb-2" />
                   <p className="text-xs text-gray-400">
-                    Your honest approach has earned {character.name.split(' ')[1]}'s respect. 
-                    She values your input on major decisions.
+                    Your honest approach has earned {character.name.split(' ')[1] || character.name}'s respect. 
+                    They value your input on major decisions.
                   </p>
                 </div>
               </div>
