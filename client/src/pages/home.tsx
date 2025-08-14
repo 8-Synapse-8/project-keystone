@@ -94,7 +94,7 @@ const Home: React.FC = () => {
       <header className="mb-8">
         <SparkLogo />
         <h1 className="font-orbitron text-4xl md:text-6xl font-bold text-white tracking-wider uppercase">
-          "HYCYBH"
+          "HYCYBH?"
         </h1>
         <p className="text-indigo-300 mt-2 text-lg">A Synapse Comics Narrative</p>
       </header>
