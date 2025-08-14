@@ -105,23 +105,8 @@ const Header: React.FC = () => (
 
 // Replace the MainContent component with this version:
 
-// SOLUTION 1: Debug the useLocation hook
-// Replace the MainContent component with this debug version:
-
 const MainContent: React.FC = () => {
   const [, setLocation] = useLocation();
-  
-  // Debug function to check if routing works
-  const handleButtonClick = () => {
-    console.log("Button clicked!"); // Check if this appears in console
-    try {
-      setLocation("/story");
-    } catch (error) {
-      console.error("Routing error:", error);
-      // Fallback: use window.location
-      window.location.href = "/story";
-    }
-  };
 
   return (
     <main className="glassmorphism rounded-2xl p-8 max-w-3xl w-full mx-auto">
@@ -134,7 +119,6 @@ const MainContent: React.FC = () => {
         <i>Wanderer</i> as they uncover a galaxy-altering truth and become fugitives, carrying a message
         that could save everyone but costs them everything.
       </p>
-      
       <div className="border-t border-purple-400/20 pt-6 mb-8">
         <h3 className="font-orbitron text-xl font-bold text-indigo-300 mb-2">Your Choices Shape the Canon</h3>
         <p className="text-gray-400 mb-6">
@@ -144,32 +128,12 @@ const MainContent: React.FC = () => {
         </p>
       </div>
 
-      {/* EMERGENCY BUTTON - Multiple approaches */}
-      <div className="flex justify-center w-full">
-        <button
-          type="button"
-          className="px-8 py-4 rounded-lg font-orbitron font-bold bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-xl shadow-lg hover:shadow-xl transform hover:scale-105"
-          onClick={handleButtonClick}
-          style={{
-            display: 'block',
-            minHeight: '60px',
-            minWidth: '200px',
-            zIndex: 10
-          }}
-        >
-          Enter the Narrative
-        </button>
-      </div>
-      
-      {/* DEBUG: Simple test button */}
-      <div className="mt-4 text-center">
-        <button 
-          onClick={() => alert("Test button works!")}
-          className="bg-red-500 text-white px-4 py-2 rounded"
-        >
-          TEST BUTTON
-        </button>
-      </div>
+      {/* Call to Action Button - Fixed visibility */}
+<div className="text-center mt-8">
+  <a href="/story" className="inline-block bg-purple-500 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded text-xl no-underline">
+    Enter the Narrative
+  </a>
+</div>
     </main>
   );
 };
