@@ -1,7 +1,6 @@
+// EMERGENCY VERSION - Complete rewrite with debugging
 import React, { useEffect, useRef } from "react";
-import { useLocation } from "wouter";  
-
-// Orbitron + Inter fonts assumed loaded via Tailwind config or index.html
+import { useLocation } from "wouter";
 
 const SparkLogo: React.FC = () => {
   const particleContainer = useRef<HTMLDivElement>(null);
@@ -9,7 +8,7 @@ const SparkLogo: React.FC = () => {
   useEffect(() => {
     const container = particleContainer.current;
     if (!container) return;
-    container.innerHTML = ""; // Clear previous particles
+    container.innerHTML = "";
     const particleCount = 30;
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement("div");
@@ -68,6 +67,121 @@ const SparkLogo: React.FC = () => {
         />
       </svg>
       <div ref={particleContainer} className="absolute top-0 left-0 w-full h-full"></div>
+    </div>
+  );
+};
+
+const Home: React.FC = () => {
+  const [, setLocation] = useLocation();
+
+  // Debug function
+  const handleClick = () => {
+    console.log("BUTTON CLICKED!");
+    try {
+      setLocation("/story");
+    } catch (error) {
+      console.error("Routing error:", error);
+      window.location.href = "/story";
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 py-8" style={{
+      backgroundColor: '#0a0a1a',
+      backgroundImage: 'radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15), transparent 50%), radial-gradient(circle at 80% 90%, rgba(139, 92, 246, 0.15), transparent 50%)'
+    }}>
+      {/* Header */}
+      <header className="mb-8">
+        <SparkLogo />
+        <h1 className="font-orbitron text-4xl md:text-6xl font-bold text-white tracking-wider uppercase">
+          Project Keystone
+        </h1>
+        <p className="text-indigo-300 mt-2 text-lg">A Synapse Comics Narrative</p>
+      </header>
+
+      {/* Main Content */}
+      <main className="rounded-2xl p-8 max-w-3xl w-full mx-auto" style={{
+        background: 'rgba(17, 24, 39, 0.3)',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255,255,255,0.1)'
+      }}>
+        <h2 className="font-orbitron text-2xl font-bold text-purple-300 mb-4">
+          The game was rigged. We're building a new one.
+        </h2>
+        <p className="text-lg text-gray-300 leading-relaxed mb-6">
+          Project Keystone is not just a story. It is a <b>Social Strand Narrative</b>—a living, breathing
+          universe built on a single principle: <b>connection</b>. Our story follows the crew of the starship{" "}
+          <i>Wanderer</i> as they uncover a galaxy-altering truth and become fugitives, carrying a message
+          that could save everyone but costs them everything.
+        </p>
+        
+        <div className="border-t border-purple-400/20 pt-6 mb-8">
+          <h3 className="font-orbitron text-xl font-bold text-indigo-300 mb-2">Your Choices Shape the Canon</h3>
+          <p className="text-gray-400 mb-6">
+            Through an interactive experience, your choices will have permanent consequences on the official
+            story. You are not just a reader; you are a Porter, a builder, a part of the network. The Spark
+            of Connection is not in any one character. It's in all of us.
+          </p>
+        </div>
+
+        {/* EMERGENCY BUTTON - Multiple versions for debugging */}
+        <div className="text-center space-y-4">
+          {/* Version 1: Simple button with inline styles */}
+          <button
+            onClick={handleClick}
+            style={{
+              padding: '16px 32px',
+              fontSize: '20px',
+              fontFamily: 'Orbitron, monospace',
+              fontWeight: 'bold',
+              background: 'linear-gradient(45deg, #8b5cf6, #6366f1)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              display: 'block',
+              margin: '0 auto',
+              minHeight: '60px',
+              minWidth: '200px'
+            }}
+          >
+            Enter the Narrative (Button)
+          </button>
+
+          {/* Version 2: Simple link */}
+          <a 
+            href="/story"
+            style={{
+              display: 'inline-block',
+              padding: '16px 32px',
+              fontSize: '20px',
+              fontFamily: 'Orbitron, monospace',
+              fontWeight: 'bold',
+              background: 'linear-gradient(45deg, #8b5cf6, #6366f1)',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              minHeight: '60px',
+              minWidth: '200px'
+            }}
+          >
+            Enter the Narrative (Link)
+          </a>
+
+          {/* Version 3: Debug text */}
+          <div style={{ color: 'red', fontSize: '14px', marginTop: '20px' }}>
+            DEBUG: If you can see this text but no buttons above, there's a CSS or rendering issue.
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="mt-12 text-purple-400/50 text-sm text-center">
+        <p>&copy; 2025 Synapse Comics. All Rights Reserved.</p>
+        <p>The signal is live. The gateway is opening.</p>
+      </footer>
+
+      {/* Inline styles for animations */}
       <style>
         {`
         @keyframes rotateSpark {
@@ -92,80 +206,5 @@ const SparkLogo: React.FC = () => {
     </div>
   );
 };
-
-const Header: React.FC = () => (
-  <header className="mb-8">
-    <SparkLogo />
-    <h1 className="font-orbitron text-4xl md:text-6xl font-bold text-white tracking-wider uppercase">
-      Project Keystone
-    </h1>
-    <p className="text-indigo-300 mt-2 text-lg">A Synapse Comics Narrative</p>
-    
-  </header>
-);
-
-// Replace the MainContent component with this version:
-
-const MainContent: React.FC = () => {
-  const [, setLocation] = useLocation();
-
-  return (
-    <main className="glassmorphism rounded-2xl p-8 max-w-3xl w-full mx-auto">
-      <h2 className="font-orbitron text-2xl font-bold text-purple-300 mb-4">
-        The game was rigged. We&apos;re building a new one.
-      </h2>
-      <p className="text-lg text-gray-300 leading-relaxed mb-6">
-        Project Keystone is not just a story. It is a <b>Social Strand Narrative</b>—a living, breathing
-        universe built on a single principle: <b>connection</b>. Our story follows the crew of the starship{" "}
-        <i>Wanderer</i> as they uncover a galaxy-altering truth and become fugitives, carrying a message
-        that could save everyone but costs them everything.
-      </p>
-      <div className="border-t border-purple-400/20 pt-6 mb-8">
-        <h3 className="font-orbitron text-xl font-bold text-indigo-300 mb-2">Your Choices Shape the Canon</h3>
-        <p className="text-gray-400 mb-6">
-          Through an interactive experience, your choices will have permanent consequences on the official
-          story. You are not just a reader; you are a Porter, a builder, a part of the network. The Spark
-          of Connection is not in any one character. It&apos;s in all of us.
-
-                {/* Call to Action Button - Fixed visibility */}
-  <a href="/story" className="inline-block bg-purple-500 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded text-xl no-underline">
-    Enter the Narrative
-  </a>
-
-        </p>
-      </div>
-    </main>
-  );
-};
-
-const Footer: React.FC = () => (
-  <footer className="mt-12 text-purple-400/50 text-sm text-center">
-    <p>&copy; 2025 Synapse Comics. All Rights Reserved.</p>
-    <p>The signal is live. The gateway is opening.</p>
-  </footer>
-);
-
-const Home: React.FC = () => (
-  <div className="min-h-screen flex flex-col items-center justify-center text-center hero-bg px-4 py-8">
-    <Header />
-    <MainContent />
-    <Footer />
-    <style>
-      {`
-      .glassmorphism {
-        background: rgba(17, 24, 39, 0.3);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.1);
-      }
-      .hero-bg {
-        background-image:
-          radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15), transparent 50%),
-          radial-gradient(circle at 80% 90%, rgba(139, 92, 246, 0.15), transparent 50%);
-      }
-      `}
-    </style>
-  </div>
-);
 
 export default Home;
