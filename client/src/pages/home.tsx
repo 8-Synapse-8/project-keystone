@@ -100,12 +100,7 @@ const Header: React.FC = () => (
       Project Keystone
     </h1>
     <p className="text-indigo-300 mt-2 text-lg">A Synapse Comics Narrative</p>
-          {/* Call to Action Button - Fixed visibility */}
-<div className="text-center mt-8">
-  <a href="/story" className="inline-block bg-purple-500 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded text-xl no-underline">
-    Enter the Narrative
-  </a>
-</div>
+    
   </header>
 );
 
@@ -131,6 +126,12 @@ const MainContent: React.FC = () => {
           Through an interactive experience, your choices will have permanent consequences on the official
           story. You are not just a reader; you are a Porter, a builder, a part of the network. The Spark
           of Connection is not in any one character. It&apos;s in all of us.
+
+                {/* Call to Action Button - Fixed visibility */}
+  <a href="/story" className="inline-block bg-purple-500 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded text-xl no-underline">
+    Enter the Narrative
+  </a>
+
         </p>
       </div>
     </main>
