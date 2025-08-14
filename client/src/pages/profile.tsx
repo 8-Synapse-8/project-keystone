@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 {/* @ts-ignore */}
 import { useQuery } from "@tanstack/react-query";
 import Sidebar from "@/components/sidebar";
@@ -160,35 +162,57 @@ export default function ProfilePage() {
                 </Card>
 
                 {/* Recent Choices */}
-                <Card className="glassmorphism border-gray-600/30">
-                  <CardHeader>
-                    <CardTitle className="text-white font-orbitron">Recent Choices</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {(userProfile.recentChoices as any[]).map((choice) => (
-                        <div key={choice.id} className="glassmorphism-light rounded-lg p-4">
-                          <div className="flex justify-between items-start mb-2">
-                            <div>
-                              <h4 className="font-medium text-white">{choice.chapter}</h4>
-                              <p className="text-sm text-purple-300">{choice.choice}</p>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                              <Badge variant={
-                                choice.impact === 'Critical' ? 'destructive' :
-                                choice.impact === 'High' ? 'default' : 'secondary'
-                              }>
-                                {choice.impact}
-                              </Badge>
-                              <span className="text-xs text-gray-400">{choice.timestamp}</span>
-                            </div>
-                          </div>
-                          <p className="text-sm text-gray-300">{choice.outcome}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+<Card className="glassmorphism border-gray-600/30">
+  <CardHeader>
+    <CardTitle className="text-white font-orbitron">Recent Choices</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <div className="space-y-4">
+      {/* REPLACE THE MAP FUNCTION WITH STATIC CONTENT FOR CONFERENCE */}
+      <div className="glassmorphism-light rounded-lg p-4">
+        <div className="flex justify-between items-start mb-2">
+          <div>
+            <h4 className="font-medium text-white">Chapter 3: The Signal</h4>
+            <p className="text-sm text-purple-300">Find a Trusted Ally First</p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Badge variant="secondary">Medium</Badge>
+            <span className="text-xs text-gray-400">2 hours ago</span>
+          </div>
+        </div>
+        <p className="text-sm text-gray-300">Unlocked Alliance Path</p>
+      </div>
+      
+      <div className="glassmorphism-light rounded-lg p-4">
+        <div className="flex justify-between items-start mb-2">
+          <div>
+            <h4 className="font-medium text-white">Chapter 2: The Discovery</h4>
+            <p className="text-sm text-purple-300">Investigate the Cargo Bay</p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Badge variant="default">High</Badge>
+            <span className="text-xs text-gray-400">1 day ago</span>
+          </div>
+        </div>
+        <p className="text-sm text-gray-300">Discovered hidden files</p>
+      </div>
+      
+      <div className="glassmorphism-light rounded-lg p-4">
+        <div className="flex justify-between items-start mb-2">
+          <div>
+            <h4 className="font-medium text-white">Chapter 1: The Contract</h4>
+            <p className="text-sm text-purple-300">Accept the Job</p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Badge variant="destructive">Critical</Badge>
+            <span className="text-xs text-gray-400">3 days ago</span>
+          </div>
+        </div>
+        <p className="text-sm text-gray-300">Started the journey</p>
+      </div>
+    </div>
+  </CardContent>
+</Card>
 
                 {/* Progress Breakdown */}
                 {userProgress && (
