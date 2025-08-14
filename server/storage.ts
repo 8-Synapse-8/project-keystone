@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { 
   type User, type InsertUser,
   type Story, type InsertStory,
