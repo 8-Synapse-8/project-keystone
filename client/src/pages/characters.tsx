@@ -49,7 +49,7 @@ export default function CharactersPage() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {characters?.map((character: any) => (
+              {(characters as any)?.map((character: any) => (
                 <Card key={character.id} className="glassmorphism border-gray-600/30">
                   <CardHeader className="pb-4">
                     <div className="flex items-center space-x-4">

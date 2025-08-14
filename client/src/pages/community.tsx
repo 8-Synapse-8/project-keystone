@@ -1,3 +1,5 @@
+// REPLACE THE ENTIRE client/src/pages/community.tsx with this:
+
 import { useQuery } from "@tanstack/react-query";
 import Sidebar from "@/components/sidebar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 
 const CURRENT_USER_ID = "demo-user-1";
 
+// ADD THIS MISSING FUNCTION DECLARATION:
 export default function CommunityPage() {
   const { data: userProgress } = useQuery({
     queryKey: ["/api/users", CURRENT_USER_ID, "progress"],
@@ -101,10 +104,10 @@ export default function CommunityPage() {
                 </div>
 
                 {/* Current Story Choices */}
-                {storyData?.choices && (
+                {(storyData as any)?.choices && (
                   <div className="space-y-3">
                     <h4 className="font-bold text-indigo-300 mb-3">Current Chapter Voting Results:</h4>
-                    {storyData.choices.map((choice: any) => (
+                    {(storyData as any).choices.map((choice: any) => (
                       <div key={choice.id} className="glassmorphism-light rounded-lg p-3">
                         <div className="flex justify-between items-center mb-2">
                           <span className="text-sm font-medium text-white">
@@ -213,4 +216,4 @@ export default function CommunityPage() {
       </div>
     </div>
   );
-}
+} // ADD THIS CLOSING BRACE FOR THE FUNCTION

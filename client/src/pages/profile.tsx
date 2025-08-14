@@ -198,19 +198,19 @@ export default function ProfilePage() {
                     <CardContent>
                       <div className="grid md:grid-cols-3 gap-4">
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-green-400">+{userProgress.trustNetwork}</div>
+                          <div className="text-2xl font-bold text-green-400">+{(userProgress as any)?.trustNetwork || 0}</div>
                           <div className="text-sm text-green-300">Trust Network</div>
                           <div className="text-xs text-gray-400 mt-1">Your honest approach builds allies</div>
                         </div>
                         
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-red-400">{userProgress.councilStanding}</div>
+                          <div className="text-2xl font-bold text-red-400">{(userProgress as any)?.councilStanding || 0}</div>
                           <div className="text-sm text-red-300">Council Standing</div>
                           <div className="text-xs text-gray-400 mt-1">Official authorities watch you</div>
                         </div>
                         
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-blue-400">+{userProgress.crewLoyalty}</div>
+                          <div className="text-2xl font-bold text-blue-400">+{(userProgress as any)?.crewLoyalty || 0}</div>
                           <div className="text-sm text-blue-300">Crew Loyalty</div>
                           <div className="text-xs text-gray-400 mt-1">Your crew trusts your judgment</div>
                         </div>

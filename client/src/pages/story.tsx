@@ -13,21 +13,50 @@ import { Skeleton } from "@/components/ui/skeleton";
 // Mock user ID for demo purposes
 const CURRENT_USER_ID = "demo-user-1";
 
+interface Choice {
+  id: string;
+  optionLetter: string;
+  title: string;
+  description: string;
+  riskLevel: string;
+  impact: string;
+  unlocks: string;
+  voteCount: number;
+  percentage: number;
+}
+
+interface StoryData {
+  id: string;
+  title: string;
+  location: string;
+  content: string;
+  imageUrl?: string;
+  chapterNumber: number;
+  choices: Choice[];
+}
+
+interface UserProgress {
+  currentChapter: number;
+  totalChoices: number;
+  trustNetwork: number;
+  councilStanding: number;
+  crewLoyalty: number;
+}
+
+
 export default function StoryPage() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
   const [characterModalOpen, setCharacterModalOpen] = useState(false);
   const { toast } = useToast();
 
-  // Fetch current story
-  const { data: storyData, isLoading: storyLoading } = useQuery({
-    queryKey: ["/api/stories/current"],
-  });
+const { data: storyData, isLoading: storyLoading } = useQuery<StoryData>({
+  queryKey: ["/api/stories/current"],
+});
 
-  // Fetch user progress
-  const { data: userProgress, isLoading: progressLoading } = useQuery({
-    queryKey: ["/api/users", CURRENT_USER_ID, "progress"],
-  });
+const { data: userProgress, isLoading: progressLoading } = useQuery<UserProgress>({
+  queryKey: ["/api/users", CURRENT_USER_ID, "progress"],
+});
 
   // Submit choice mutation
   const submitChoiceMutation = useMutation({
@@ -66,7 +95,7 @@ export default function StoryPage() {
     if (storyData) {
       submitChoiceMutation.mutate({
         choiceId,
-        storyId: storyData.id,
+        storyId: (storyData as any)?.id,
       });
     }
   };
@@ -117,10 +146,10 @@ export default function StoryPage() {
               </Button>
               <div>
                 <h2 className="font-orbitron text-xl font-bold text-white">
-                  {storyData?.title || "Loading..."}
+                  {(storyData as any)?.title || "Loading..."}
                 </h2>
                 <p className="text-sm text-gray-400">
-                  {storyData?.location || ""}
+                  {(storyData as any)?.location || ""}
                 </p>
               </div>
             </div>
