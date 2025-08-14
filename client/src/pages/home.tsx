@@ -103,6 +103,8 @@ const Header: React.FC = () => (
   </header>
 );
 
+// Replace the MainContent component with this version:
+
 const MainContent: React.FC = () => {
   const [, setLocation] = useLocation();
 
@@ -117,22 +119,24 @@ const MainContent: React.FC = () => {
         <i>Wanderer</i> as they uncover a galaxy-altering truth and become fugitives, carrying a message
         that could save everyone but costs them everything.
       </p>
-      <div className="border-t border-purple-400/20 pt-6">
+      <div className="border-t border-purple-400/20 pt-6 mb-8">
         <h3 className="font-orbitron text-xl font-bold text-indigo-300 mb-2">Your Choices Shape the Canon</h3>
-        <p className="text-gray-400">
+        <p className="text-gray-400 mb-6">
           Through an interactive experience, your choices will have permanent consequences on the official
           story. You are not just a reader; you are a Porter, a builder, a part of the network. The Spark
           of Connection is not in any one character. It&apos;s in all of us.
         </p>
       </div>
 
-      {/* Call to Action Button */}
-<button
-  className="mt-8 px-6 py-3 rounded-lg font-orbitron bg-purple-500 text-white hover:bg-purple-700 transition text-xl shadow-lg"
-  onClick={() => setLocation("/story")}
->
-  Enter the Narrative
-</button>
+      {/* Call to Action Button - Fixed visibility */}
+      <div className="flex justify-center">
+        <button
+          className="px-8 py-4 rounded-lg font-orbitron font-bold bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-xl shadow-lg hover:shadow-xl transform hover:scale-105"
+          onClick={() => setLocation("/story")}
+        >
+          Enter the Narrative
+        </button>
+      </div>
     </main>
   );
 };
