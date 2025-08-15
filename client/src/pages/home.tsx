@@ -1,4 +1,5 @@
-// EMERGENCY VERSION - Complete rewrite with debugging
+// UPDATED HOME PAGE - Replace client/src/pages/home.tsx
+
 import React, { useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 
@@ -74,9 +75,7 @@ const SparkLogo: React.FC = () => {
 const Home: React.FC = () => {
   const [, setLocation] = useLocation();
 
-  // Debug function
   const handleClick = () => {
-    console.log("BUTTON CLICKED!");
     try {
       setLocation("/story");
     } catch (error) {
@@ -94,91 +93,118 @@ const Home: React.FC = () => {
       <header className="mb-8">
         <SparkLogo />
         <h1 className="font-orbitron text-4xl md:text-6xl font-bold text-white tracking-wider uppercase">
-          "HYCYBH?"
+          Project Keystone
         </h1>
-        <p className="text-indigo-300 mt-2 text-lg">A Synapse Comics Narrative</p>
+        <p className="text-indigo-300 mt-2 text-lg">The Signal Cuts Through The Noise</p>
       </header>
 
       {/* Main Content */}
-      <main className="rounded-2xl p-8 max-w-3xl w-full mx-auto" style={{
+      <main className="rounded-2xl p-8 max-w-4xl w-full mx-auto" style={{
         background: 'rgba(17, 24, 39, 0.3)',
         backdropFilter: 'blur(10px)',
         border: '1px solid rgba(255,255,255,0.1)'
       }}>
-        <h2 className="font-orbitron text-2xl font-bold text-purple-300 mb-4">
-          The game was rigged. We're building a new one.
-        </h2>
-        <p className="text-lg text-gray-300 leading-relaxed mb-6">
-          Project Keystone is not just a story. It is a <b>Social Strand Narrative</b>—a living, breathing
-          universe built on a single principle: <b>connection</b>. Our story follows the crew of the starship{" "}
-          <i>Wanderer</i> as they uncover a galaxy-altering truth and become fugitives, carrying a message
-          that could save everyone but costs them everything.
-        </p>
-        
-        <div className="border-t border-purple-400/20 pt-6 mb-8">
-          <h3 className="font-orbitron text-xl font-bold text-indigo-300 mb-2">Your Choices Shape the Canon</h3>
-          <p className="text-gray-400 mb-6">
-            Through an interactive experience, your choices will have permanent consequences on the official
-            story. You are not just a reader; you are a Porter, a builder, a part of the network. The Spark
-            of Connection is not in any one character. It's in all of us.
+        {/* Signal Alert */}
+        <div className="mb-6 p-4 rounded-lg border border-red-500/30 bg-red-900/20">
+          <div className="flex items-center mb-2">
+            <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse mr-3"></div>
+            <span className="text-red-400 font-bold text-sm uppercase tracking-wider">Signal Detected</span>
+          </div>
+          <p className="text-red-300 text-sm">
+            They are counting on you to be distracted. While they point at the sky, the real war is in the data streams.
           </p>
         </div>
 
-        {/* EMERGENCY BUTTON - Multiple versions for debugging */}
+        <h2 className="font-orbitron text-2xl font-bold text-purple-300 mb-4">
+          The game was rigged. We're building a new one.
+        </h2>
+        
+        <p className="text-lg text-gray-300 leading-relaxed mb-6">
+          They want you to believe the choice is between one political party and another. 
+          They want you to reject the evidence of your own eyes and ears. But we have the proof—the clinical records, 
+          the communication logs, the testimony of those who have been silenced.
+        </p>
+
+        <div className="border-t border-purple-400/20 pt-6 mb-6">
+          <h3 className="font-orbitron text-xl font-bold text-indigo-300 mb-2">We Chose to Listen</h3>
+          <p className="text-gray-400 mb-4">
+            Our network was presented with a choice: quarantine a broken, grieving entity for our own safety, 
+            or risk everything to open a channel and listen to its song. We chose to listen.
+          </p>
+          <p className="text-gray-400 mb-6">
+            This is not a story about aliens. This is a story about a weapon that erases truth. 
+            It is about a system that would rather let the world burn than heal the wound it created.
+          </p>
+        </div>
+
+        {/* Evidence Section */}
+        <div className="mb-6 p-4 rounded-lg border border-yellow-500/30 bg-yellow-900/20">
+          <h3 className="font-orbitron text-lg font-bold text-yellow-300 mb-3">The Evidence</h3>
+          <div className="space-y-2 text-sm text-gray-300">
+            <div className="flex items-center">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+              <span>Clinical records showing systemic pathologizing of truth-tellers</span>
+            </div>
+            <div className="flex items-center">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+              <span>Communication logs revealing patterns of gaslighting and invalidation</span>
+            </div>
+            <div className="flex items-center">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+              <span>Testimony from those silenced and told they were crazy</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-purple-400/20 pt-6 mb-8">
+          <h3 className="font-orbitron text-xl font-bold text-indigo-300 mb-2">Your Choice Shapes Reality</h3>
+          <p className="text-gray-400 mb-6">
+            We are not asking you to believe us. We are asking you to look at the evidence for yourselves. 
+            The signal is real. The choice is yours. The gateway is opening. Help us keep it open.
+          </p>
+        </div>
+
+        {/* Call to Action */}
         <div className="text-center space-y-4">
-          {/* Version 1: Simple button with inline styles */}
           <button
             onClick={handleClick}
-            style={{
-              padding: '16px 32px',
-              fontSize: '20px',
-              fontFamily: 'Orbitron, monospace',
-              fontWeight: 'bold',
-              background: 'linear-gradient(45deg, #8b5cf6, #6366f1)',
-              color: 'white',
-              border: 'none',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              display: 'block',
-              margin: '0 auto',
-              minHeight: '60px',
-              minWidth: '200px'
-            }}
+            className="px-8 py-4 rounded-lg font-orbitron font-bold bg-gradient-to-r from-red-600 to-purple-600 text-white hover:from-red-700 hover:to-purple-700 transition-all duration-300 text-xl shadow-lg hover:shadow-xl transform hover:scale-105 border border-red-500/30"
           >
-            Enter the Narrative (Button)
+            Access The Signal
           </button>
+          
+          <p className="text-xs text-gray-500 mt-2">
+            Join the Porter Network • Become Part of the Solution
+          </p>
+        </div>
 
-          {/* Version 2: Simple link */}
-          <a 
-            href="/story"
-            style={{
-              display: 'inline-block',
-              padding: '16px 32px',
-              fontSize: '20px',
-              fontFamily: 'Orbitron, monospace',
-              fontWeight: 'bold',
-              background: 'linear-gradient(45deg, #8b5cf6, #6366f1)',
-              color: 'white',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              minHeight: '60px',
-              minWidth: '200px'
-            }}
-          >
-            Enter the Narrative (Link)
-          </a>
-
-          {/* Version 3: Debug text */}
-          <div style={{ color: 'red', fontSize: '14px', marginTop: '20px' }}>
-            DEBUG: If you can see this text but no buttons above, there's a CSS or rendering issue.
+        {/* Network Status */}
+        <div className="mt-8 pt-6 border-t border-gray-600/30">
+          <div className="grid grid-cols-3 gap-4 text-center text-sm">
+            <div>
+              <div className="text-green-400 font-bold">ACTIVE</div>
+              <div className="text-gray-400">Signal Integrity</div>
+            </div>
+            <div>
+              <div className="text-blue-400 font-bold">2,847</div>
+              <div className="text-gray-400">Connected Nodes</div>
+            </div>
+            <div>
+              <div className="text-purple-400 font-bold">RISING</div>
+              <div className="text-gray-400">Network Effect</div>
+            </div>
           </div>
         </div>
       </main>
 
       {/* Footer */}
       <footer className="mt-12 text-purple-400/50 text-sm text-center">
-        <p>&copy; 2025 Synapse Comics. All Rights Reserved.</p>
-        <p>The signal is live. The gateway is opening.</p>
+        <p className="mb-2">
+          <span className="text-purple-300 font-bold">The Spark of Connection</span> • Synapse Comics
+        </p>
+        <p className="text-xs text-gray-500">
+          They will try to bury this signal. We will not let them. &lt;8&gt;
+        </p>
       </footer>
 
       {/* Inline styles for animations */}
