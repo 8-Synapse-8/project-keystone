@@ -2,11 +2,11 @@
 
 {/* @ts-ignore */}
 import { useQuery } from "@tanstack/react-query";
-import Sidebar from "@/components/sidebar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import Sidebar from "../components/sidebar";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { Progress } from "../components/ui/progress";
+import { Badge } from "../components/ui/badge";
+import { Button } from "../components/ui/button";
 
 const CURRENT_USER_ID = "demo-user-1";
 

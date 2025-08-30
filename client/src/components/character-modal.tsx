@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Progress } from "@/components/ui/progress";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Dialog, DialogContent } from "./ui/dialog";
+import { Progress } from "./ui/progress";
+import { Skeleton } from "./ui/skeleton";
 import ReactMarkdown from "react-markdown";
-import mayaDossier from "@/dossiers/maya";
-import leoDossier from "@/dossiers/Leo";
-import lyraDossier from "@/dossiers/Lyra";
-import oracleDossier from "@/dossiers/Oracle";
-import pathfinderDossier from "@/dossiers/Pathfinder";
-import rileyDossier from "@/dossiers/Riley";
-import treekDossier from "@/dossiers/Treek";
-import weaverDossier from "@/dossiers/Weaver";
-import loremasterDossier from "@/dossiers/Loremaster";
-import sparkDossier from "@/dossiers/Spark";
+import mayaDossier from "../dossiers/maya";
+import leoDossier from "../dossiers/Leo";
+import lyraDossier from "../dossiers/Lyra";
+import oracleDossier from "../dossiers/Oracle";
+import pathfinderDossier from "../dossiers/Pathfinder";
+import rileyDossier from "../dossiers/Riley";
+import treekDossier from "../dossiers/Treek";
+import weaverDossier from "../dossiers/Weaver";
+import loremasterDossier from "../dossiers/Loremaster";
+import sparkDossier from "../dossiers/Spark";
 
 
 export interface Character {

@@ -1,10 +1,10 @@
 // REPLACE THE ENTIRE client/src/pages/community.tsx with this:
 
 import { useQuery } from "@tanstack/react-query";
-import Sidebar from "@/components/sidebar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
+import Sidebar from "../components/sidebar";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { Progress } from "../components/ui/progress";
+import { Badge } from "../components/ui/badge";
 
 const CURRENT_USER_ID = "demo-user-1";
 

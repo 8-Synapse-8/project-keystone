@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { crew } from "@/components/character-modal";
-import CharacterModal from "@/components/character-modal";
-import Sidebar from "@/components/sidebar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { crew } from "../components/character-modal";
+import CharacterModal from "../components/character-modal";
+import Sidebar from "../components/sidebar";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "../components/ui/skeleton";
 
 const CURRENT_USER_ID = "demo-user-1";
 

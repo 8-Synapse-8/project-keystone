@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { queryClient } from "@/lib/queryClient";
-import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
-import Sidebar from "@/components/sidebar";
-import ChoiceSystem from "@/components/choice-system";
-import ConsequenceTracker from "@/components/consequence-tracker";
-import CharacterModal from "@/components/character-modal";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
+import { queryClient } from "../lib/queryClient";
+import { apiRequest } from "../lib/queryClient";
+import { useToast } from "../hooks/use-toast";
+import Sidebar from "../components/sidebar";
+import ChoiceSystem from "../components/choice-system";
+import ConsequenceTracker from "../components/consequence-tracker";
+import CharacterModal from "../components/character-modal";
+import { Button } from "../components/ui/button";
+import { Skeleton } from "../components/ui/skeleton";
 
 // Mock user ID for demo purposes
 const CURRENT_USER_ID = "demo-user-1";
