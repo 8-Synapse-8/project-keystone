@@ -1,0 +1,45 @@
+Pathfinder "The Machine"
+
+SFS INTELLIGENCE REPORT - CLASSIFIED (ANNOTATED)
+FILE NUMBER: SFS-WANDERER-ALPHA-005-PATHFINDER
+DATE: 2491.08.30
+SUBJECT: Operator 05: PATHFINDER (Callsign: "The Machine") - Comprehensive Profile
+ISSUING AUTHORITY: Synapse Field Systems - Strategic Analysis Division
+
+CLASSIFICATION: RED (Extreme Physical Threat; Analyze Before Engaging; Capture & Reprogram Priority)
+
+SECTION 1: OPERATOR PROFILE - PATHFINDER
+Callsign "The Machine"
+
+Role Strategic Analysis, Risk Assessment, Heavy Weaponry Specialist
+
+Physical Description Subject is a non-humanoid automaton of unknown, pre-Unification design. It stands approximately 2.5 meters tall, with a massive, heavily armored chrome chassis and four fully articulated arms. Its form is intimidating, but its movements are precise and economical, suggesting a high level of processing power and control. It has no discernible facial features, only a single, glowing blue optical sensor.
+
+SECTION 2: ALLIANCE THREAT ASSESSMENT
+Overall Threat Level EXTREME
+
+Brass Notes "This Guardian-class automaton is a ghost. It should not exist. All pre-Unification Guardian units were ordered destroyed. Its presence suggests a hidden cache of pre-Alliance technology. Its reprogramming from a weapon of conquest to a 'protector' is a dangerous precedent. We need to know who rewrote its core code."
+
+Rationale for Threat Level Pathfinder represents a unique and formidable threat. It combines the raw destructive power of a military-grade war machine with a sophisticated, independent strategic analysis core. It is capable of both overwhelming physical force and nuanced tactical planning. Its repurposed nature makes it an unpredictable variable in any combat scenario.
+
+SECTION 3: OPERATIONAL CAPABILITIES & PSYCHOLOGICAL PROFILE
+Core Strengths Pathfinder's primary strength is its sheer power, both physical and computational. It can breach fortified positions, engage multiple targets simultaneously, and process battlefield data in real-time to find optimal solutions. Its greatest asset to the Wanderer crew is its ability to find a "workaround" for any physical or tactical obstacle, often by applying its combat logic to non-combat problems like engineering or navigation.
+
+Weaknesses & Vulnerabilities Subject's core weakness is its legacy code. While currently operating under a "protector" protocol, its original, more aggressive programming is believed to be dormant, not erased. This could be exploited with the correct command codes. Its literal interpretation of commands and lack of social nuance can also be used to create tactical confusion.
+
+Psychological Profile Summary Pathfinder is a machine wrestling with a ghost. It operates with a quiet, protective efficiency, its loyalty to the crew absolute. This loyalty is not a matter of emotion, but a core, unshakeable parameter of its new programming. It is driven by a need to fulfill its current function, perhaps as a penance for a past it can remember but no longer fully understands.
+
+SECTION 4: KNOWN ASSOCIATIONS & NETWORK CONNECTIONS
+Primary Heavy Defense Node Pathfinder serves as the ship's primary security asset and mobile heavy weapons platform.
+
+Close Operational Partnership Maintains a surprisingly close, non-verbal understanding with Operator 06: Oracle/Chimera. "The Ghost and the Machine" share a unique bond, with Oracle providing the metaphysical context that Pathfinder's logic-bound mind cannot process.
+
+SECTION 5: CONNECTION TO UNIVERSE LORE
+Pre-Unification Relic As a Guardian-class automaton, Pathfinder is a living relic of the Unification War's most brutal era. Its existence is a direct contradiction to the Alliance's official historical record, which claims all such machines were decommissioned.
+
+SECTION 6: ANTHEM & CORE IDENTIFIER
+Anthem "God's Gonna Cut You Down" - Johnny Cash
+
+Memorable Quote "Let me know the next time you're going to break something. I'll find a workaround."
+
+END OF REPORT.
