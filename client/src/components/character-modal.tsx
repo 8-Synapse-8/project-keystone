@@ -194,7 +194,7 @@ export const crew: Character[] = [
     id: "spark",
     name: "The Spark (S.F.S. Wanderer)",
     title: "The Ship",
-    imageUrl: "/art/wanderer.png",
+    imageUrl: "/art/Spark.png",
     background: "A heavily modified survey-class freighter, the Spark is more than a ship—it's a living member of the crew.",
     trustLevel: 100,
     appearanceCount: 14,
